@@ -66,3 +66,10 @@ A imagem central ainda é uma **referência artística estática**, não o sprit
 A versão v0.5 substitui **visualmente** a Central v0.4. A **arte aprovada** é exibida sem a sobreposição da interface genérica. Aparência abre uma janela maior com modelo corporal, tons de pele, cabelos, roupas e acessórios, com Cancelar/Salvar. No menu, só Matemática está disponível. A construção de habilidades inicia com **um único núcleo bloqueado** até o tutorial, e o favo cresce por desbloqueios registrados (células adjacentes por aresta). O código do motor está em `src/build_hex_core_v05.js`, e a interface em `src/central_discente_v05.js` e `src/central_discente_v05.css`. O progresso inicial da build é gravado como bloqueado no perfil; não existe botão para expandi-lo antes do tutorial. Ainda não há sprite mestre definitivo ou tutorial funcional.
 
 Documentação e capturas: [Central v0.5 no Drive](https://drive.google.com/drive/folders/1ke8n1Hp1UEN4O6WgKwNyx86CJ2RPu5zN) e [docs/CENTRAL_DISCENTE_V05.md](docs/CENTRAL_DISCENTE_V05.md).
+
+
+## Central do Discente v0.6 — personalização na própria moldura (05/11/2026)
+
+O botão **Aparência** abre um painel **deslizante para cima dentro da moldura esquerda**, substituindo os controles de nome/curso, sem cobrir o Discente central nem a build hexagonal à direita. Categorias: Corpo e Pele, Cabelo, Roupas, Acessórios. **Salvar** aplica as escolhas; **Cancelar**, Voltar ou Escape restauram o visual anterior. No celular, o editor ocupa a área do perfil abaixo da arte, sem janela de fundo escuro.
+
+Arquivos ativos: `src/central_discente_v06.js` e `src/central_discente_v06.css` (carregado após o CSS da v0.5). Motor de build progressiva e sistema de cinco saves preservados; a figura central permanece apenas uma referência estática até o sprite mestre estar pronto. [Documentação](docs/CENTRAL_DISCENTE_V06.md) · [Pasta de código e capturas no Drive](https://drive.google.com/drive/folders/16hvU_yiWEPwasQtk3hRvHtUpH5A4GQee).
