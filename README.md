@@ -31,3 +31,15 @@ Documentação e arquivos de produção também estão organizados no [Google Dr
 Integrar sprites e habilidades desacoplados do personagem, testar desempenho e navegação em celular, desenvolver a interface de continuação e inventário, conectar o motor de combate, implementar três rounds e boletim acadêmico.
 
 **Status:** protótipo navegável, não jogo final. © Autores dos recursos próprios do ICEN Fighters; respeitar licenças de componentes de terceiros.
+
+
+## Redesenho em avaliação (não substitui o jogo)
+
+Identificamos limitações de rolagem na interface v0.2 e de anatomia/animação nos sprites estáticos 80×112. Estamos testando um sistema de personagem mestre com rig compartilhado, cosméticos modulares e habilidades totalmente independentes.
+
+- [Prévia navegável do novo menu v0.3](docs/menu-conceito-v03.html) — layout, cores e criação do Discente; sem alteração dos saves.
+- [Pesquisa e proposta do menu v0.3](docs/PROPOSTA_REDESIGN_MENU_v03.md).
+- [Arquitetura de rig mestre e skins](docs/PROPOSTA_RIG_MESTRE_E_SKINS_v01.md).
+- [Plano de construção do ICEN Studio](docs/PROPOSTA_ICEN_STUDIO_FERRAMENTA_PERSONAGENS_v01.md).
+
+O manequim da prévia é somente um marcador técnico, não o sprite final. **A página inicial atual permanece intacta até a aprovação visual.**
