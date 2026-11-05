@@ -52,3 +52,10 @@ A tela inicial publicada usa a arte aprovada com os quatro lutadores de Matemát
 **Novo Jogo** utiliza um botão HTML acessível posicionado sobre a arte, conectado ao criador do Discente já existente. Continuar, Opções e Créditos permanecem desabilitados. Em celular vertical, botões maiores ficam abaixo da imagem. Trata-se da arte oficial do menu, não de sprites de combate.
 
 Consulte `docs/MENU_OFICIAL_V1.md`.
+
+
+## Central do Discente v0.4 — interface aplicada (05/11/2026)
+
+O botão **Novo Jogo** abre a Central com três áreas: **identidade/aparência à esquerda**, **manequim de referência no centro** e **build em favo de mel à direita**. Na criação, apenas o curso Matemática está disponível; nome, corpo, tons de pele, cabelo, roupa e acessórios são registrados no mesmo sistema de até cinco perfis locais. A grade começa bloqueada até o tutorial; há demonstrações visuais de sinergia e expansão (7 → 19 hexágonos) sem conceder habilidades. Os hexágonos compartilham arestas e a base axial está em `src/build_hex_core.js`.
+
+A imagem central ainda é uma **referência artística estática**, não o sprite modular definitivo. A criação do perfil funciona, mas **tutorial e combate ainda não estão conectados ao fluxo desta tela**. [Arquivos no Drive](https://drive.google.com/drive/folders/13D7IaJlN_P6E7myEktQ6Ol0AgL4H1ATL) e detalhes em `docs/CENTRAL_DISCENTE_V04.md`.
