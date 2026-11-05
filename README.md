@@ -83,3 +83,12 @@ Somente a placa retangular da UNILAB foi retirada do **fundo** do menu inicial e
 ## Central do Discente v0.8 — identidade visual e Voltar corrigido (05/11/2026)
 
 Aparência deixou de parecer um seletor lateral: no quadro fechado há uma única seta **▲** e o botão **ABRIR PERSONALIZAÇÃO**. Quando aberto, o editor sobe dentro da moldura esquerda e usa a arte oficial aprovada do painel de Aparência (sem placa no prédio). O botão superior de Voltar foi eliminado; o **Voltar inferior** agora fecha o painel e desfaz alterações, enquanto o **Confirmar inferior** aplica o visual. Na ficha normal, Voltar retorna ao menu e Confirmar cria o perfil. Os botões internos Cancelar/Salvar continuam válidos, com aparência consistente. O Discente estático e a build bloqueada permanecem inalterados. Veja [documentação da v0.8](docs/CENTRAL_DISCENTE_V08.md) e [arquivos de teste no Drive](https://drive.google.com/drive/folders/10mCrbz0__yPZzDpzXtSb_oq15s7gwx4D).
+
+
+## Central do Discente v0.9 — artes oficiais integradas (05/11/2026)
+
+Foram aprovadas e publicadas **duas artes de criação do Discente**: ficha fechada e Aparência aberta, ambas coerentes com a identidade visual do menu e sem placa da UNILAB no fundo. A tela agora usa `assets/creator/central_discente_fechada_v09.webp` e `assets/creator/central_discente_aparencia_aberta_v09.webp`, sem criar uma nova moldura sobre os elementos. O botão de Aparência tem seta para cima e abre o conteúdo da moldura esquerda. Em Aparência, **Voltar** cancela e **Confirmar** salva; na ficha, Voltar retorna ao início e Confirmar cria o perfil. Também funcionam os botões internos Cancelar/Salvar. A build é exibida com **um único núcleo bloqueado**, já desenhado na arte, sem o painel provisório sobreposto.
+
+**A plataforma e o manequim holográfico centrais continuam temporários**; quando houver o sprite mestre modular, a apresentação 2D e a plataforma deverão ser revistas em conjunto. O tutorial e a integração com a engine de combate ainda não estão prontos.
+
+Arquivos: `src/central_discente_v09.js`, `src/central_discente_v09.css` e [documentação](docs/CENTRAL_DISCENTE_V09.md). [Materiais, testes e artes no Drive](https://drive.google.com/drive/folders/1s35nAbvI1VqKUBPSQmOEjAHWPzwDHvfA).
