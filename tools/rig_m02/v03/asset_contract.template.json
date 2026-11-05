@@ -1,0 +1,188 @@
+{
+  "format": "icen.sprite-parts.v0.3",
+  "status": "TEMPLATE_NOT_PRODUCTION_ASSETS",
+  "characterId": "discente.masculino.02",
+  "canonicalRig": "icen_humanoid_v1",
+  "workingCanvas": [
+    182,
+    320
+  ],
+  "animationsToValidate": [
+    "idle",
+    "punch_light",
+    "kick_light"
+  ],
+  "spriteSources": {
+    "layeredMaster": "EDIT_ME/layered_master.aseprite",
+    "sourceRule": "Draw original parts, including hidden anatomy. Do not segment an existing flattened image."
+  },
+  "layerSlots": [
+    "body",
+    "top",
+    "sleeve_L",
+    "sleeve_R",
+    "bottom",
+    "short_leg_L",
+    "short_leg_R",
+    "shoe_L",
+    "shoe_R",
+    "hair_back",
+    "hair_front"
+  ],
+  "parts": [
+    {
+      "id": "body",
+      "category": "body",
+      "image": "EDIT_ME/body.png",
+      "mask": "EDIT_ME/masks/body.png",
+      "pivot": [
+        91,
+        270
+      ],
+      "zIndex": 10
+    },
+    {
+      "id": "top",
+      "category": "top",
+      "image": "EDIT_ME/top.png",
+      "mask": "EDIT_ME/masks/top.png",
+      "pivot": [
+        91,
+        130
+      ],
+      "zIndex": 20
+    },
+    {
+      "id": "sleeve_L",
+      "category": "top",
+      "image": "EDIT_ME/sleeve_L.png",
+      "mask": "EDIT_ME/masks/sleeve_L.png",
+      "pivot": [
+        56,
+        100
+      ],
+      "zIndex": 22
+    },
+    {
+      "id": "sleeve_R",
+      "category": "top",
+      "image": "EDIT_ME/sleeve_R.png",
+      "mask": "EDIT_ME/masks/sleeve_R.png",
+      "pivot": [
+        120,
+        100
+      ],
+      "zIndex": 19
+    },
+    {
+      "id": "bottom",
+      "category": "bottom",
+      "image": "EDIT_ME/bottom.png",
+      "mask": "EDIT_ME/masks/bottom.png",
+      "pivot": [
+        91,
+        180
+      ],
+      "zIndex": 30
+    },
+    {
+      "id": "short_leg_L",
+      "category": "bottom",
+      "image": "EDIT_ME/short_leg_L.png",
+      "mask": "EDIT_ME/masks/short_leg_L.png",
+      "pivot": [
+        68,
+        205
+      ],
+      "zIndex": 31
+    },
+    {
+      "id": "short_leg_R",
+      "category": "bottom",
+      "image": "EDIT_ME/short_leg_R.png",
+      "mask": "EDIT_ME/masks/short_leg_R.png",
+      "pivot": [
+        118,
+        205
+      ],
+      "zIndex": 32
+    },
+    {
+      "id": "shoe_L",
+      "category": "shoes",
+      "image": "EDIT_ME/shoe_L.png",
+      "mask": "EDIT_ME/masks/shoe_L.png",
+      "pivot": [
+        40,
+        290
+      ],
+      "zIndex": 33
+    },
+    {
+      "id": "shoe_R",
+      "category": "shoes",
+      "image": "EDIT_ME/shoe_R.png",
+      "mask": "EDIT_ME/masks/shoe_R.png",
+      "pivot": [
+        142,
+        290
+      ],
+      "zIndex": 34
+    },
+    {
+      "id": "hair_back",
+      "category": "hair",
+      "image": "EDIT_ME/hair_back.png",
+      "mask": "EDIT_ME/masks/hair_back.png",
+      "pivot": [
+        95,
+        58
+      ],
+      "zIndex": 8
+    },
+    {
+      "id": "hair_front",
+      "category": "hair",
+      "image": "EDIT_ME/hair_front.png",
+      "mask": "EDIT_ME/masks/hair_front.png",
+      "pivot": [
+        95,
+        58
+      ],
+      "zIndex": 42
+    }
+  ],
+  "colorSwaps": {
+    "blueTop": {
+      "allowedPartIds": [
+        "top",
+        "sleeve_L",
+        "sleeve_R"
+      ],
+      "mustNotChange": [
+        "bottom",
+        "short_leg_L",
+        "short_leg_R",
+        "shoe_L",
+        "shoe_R",
+        "body"
+      ],
+      "alternateImagePaths": {
+        "top": "EDIT_ME/alternates/top_blue.png",
+        "sleeve_L": "EDIT_ME/alternates/sleeve_L_blue.png",
+        "sleeve_R": "EDIT_ME/alternates/sleeve_R_blue.png"
+      }
+    }
+  },
+  "qa": {
+    "manualRequired": [
+      "idle seams",
+      "punch seams",
+      "kick seams",
+      "foot contact",
+      "front/back overlap",
+      "no transparent anatomy holes",
+      "outfit swapping while moving"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format": "icen.fighter.visual.v1",
+  "status": "DESIGN_ONLY_NOT_ENGINE_IMPLEMENTATION",
+  "principle": "Game progression, player data, earned abilities and damage logic do not depend on fighter drawing technology.",
+  "engineStates": ["idle", "walk_fwd", "walk_back", "jump", "punch_light", "kick_light", "block", "hurt", "knockdown", "getup"],
+  "combatSockets": ["hand_L", "hand_R", "foot_L", "foot_R", "center", "head"],
+  "representationModes": {
+    "modular_rig": {
+      "referenceFighterId": "discente.masculino.02",
+      "rigId": "icen_humanoid_v1",
+      "bodyId": "masculino.02",
+      "outfitId": "uniforme-piloto",
+      "hairId": "curto-01",
+      "manifestPath": "asset_contract.json",
+      "status": "BLOCKED_UNTIL_REBUILT_ART_PASS_QA"
+    },
+    "fixed_spritesheet": {
+      "referenceFighterId": "discente.fixo.01",
+      "atlas": "NOT_YET_PRODUCED/fighter.png",
+      "animationManifest": "NOT_YET_PRODUCED/fighter_animations.json",
+      "frameOrigins": "normalizedToFeetAnchor",
+      "combatSocketSource": "perFrameOrPerAnimationMetadata",
+      "status": "CONTINGENCY_NOT_ACTIVATED"
+    }
+  },
+  "proposedApi": [
+    "loadVisual(fighterId, visualMode)",
+    "draw(ctx, pose, facing, time, cosmeticLoadout)",
+    "getCombatSocket(socketId, pose, facing, time)",
+    "getVisualBounds(pose, facing, time)",
+    "verifyAssetCompatibility(bodyId, outfitId)"
+  ],
+  "progressionDoesNotResetWhenSwitchingVisualMode": true,
+  "powersAreSeparateFromCharacterPixels": true,
+  "unlockableDisciplineFighters": "PROPOSAL_PENDING_GAMEPLAY_DESIGN"
+}

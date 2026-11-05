@@ -111,3 +111,13 @@ A **Opção 2 masculina** da última folha de estudo anatômico foi selecionada 
 ## Laboratório idle v0.2 — Masculino opção 2 (05/11/2026)
 
 [**Abrir laboratório de animação**](tools/rig_m02/idle_v02/rig_idle_lab.html) — primeiro teste do Discente com **15 peças PNG transparentes** (pacote original no Drive) e **12 quadros temporais de guarda parada (idle)**. A versão HTML em GitHub Pages inclui as texturas embutidas, controle de pausa/frame, inspeção de partes, referência, espelhamento e teste de cor de camiseta. O piloto foi testado em Chromium 1366×768 e 390×844 sem erro de JavaScript ou rolagem horizontal. **Não é arte definitiva**: partes foram segmentadas da ilustração-base; roupas e articulações ocultas precisarão ser redesenhadas. Os demais movimentos e a integração à criação de Discente continuam pendentes. Consulte [documentação](docs/RIG_PILOTO_DISCENTE_MASCULINO_02_V02.md) e [Drive — pacote e fontes](https://drive.google.com/drive/folders/12F8FYNFdxHdhaEXKe8jw9YUqv3WUYbMx).
+
+## Tentativa modular v0.3 e alternativa com lutadores fixos (05/11/2026)
+
+Após os problemas de máscara do laboratório M02 v0.2, **não reutilizar recortes da figura achatada como sprites definitivos**. A próxima experiência é desenhar do zero, em camadas, apenas o **Discente masculino, opção 2**, com camiseta independente e testes de idle, punch_light e kick_light. A referência M02 continua válida para proporções; os assets precisam ser novos e editáveis.
+
+A tentativa tem uma alternativa explícita: caso o resultado não tenha qualidade após a revisão, usar **4 a 8 avatares pré-definidos com spritesheets quadro a quadro**, mais personagens de disciplinas desbloqueáveis. Em ambos os casos, **habilidades e progresso acadêmico permanecem independentes dos sprites**. A troca para a alternativa exigirá nova decisão, não ocorre automaticamente.
+
+[Decisão e critérios de aceite](docs/SPRITE_MESTRE_M02_DECISAO_V03.md) · [Contrato e verificador de peças](tools/rig_m02/v03/README.md) · [Arquivos no Drive](https://drive.google.com/drive/folders/1oAVPXHvvwlK5CB9LODGqhJdVydbsiuJD).
+
+**Estado:** especificação e testes de validação (3 casos) implementados; **sprites originais e animações ainda não produzidos**. Nada foi alterado nas telas ou no sistema de combate.
