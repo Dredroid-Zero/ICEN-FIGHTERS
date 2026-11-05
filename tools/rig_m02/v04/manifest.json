@@ -1,0 +1,79 @@
+{
+  "format": "icen.original-layered-fighter.v0.4",
+  "character": "discente.masculino.02",
+  "status": "articulated_pilot_qa_pending",
+  "frameWidth": 182,
+  "frameHeight": 320,
+  "columns": 8,
+  "rows": 4,
+  "animations": {
+    "idle": {
+      "start": 0,
+      "length": 12,
+      "fps": 12
+    },
+    "punch_light": {
+      "start": 12,
+      "length": 8,
+      "fps": 12
+    },
+    "kick_light": {
+      "start": 20,
+      "length": 12,
+      "fps": 12
+    }
+  },
+  "layerOrder": [
+    "hair_back",
+    "leg_rear",
+    "leg_front",
+    "body",
+    "arm_far",
+    "shirt_far_sleeve",
+    "shorts",
+    "shirt",
+    "arm_near",
+    "shirt_near_sleeve",
+    "foot_rear",
+    "foot_front",
+    "shoe_rear",
+    "shoe_front",
+    "head",
+    "hair_front"
+  ],
+  "layerAtlases": {
+    "hair_back": "assets/hair_back.png",
+    "leg_rear": "assets/leg_rear.png",
+    "leg_front": "assets/leg_front.png",
+    "body": "assets/body.png",
+    "arm_far": "assets/arm_far.png",
+    "shirt_far_sleeve": "assets/shirt_far_sleeve.png",
+    "shorts": "assets/shorts.png",
+    "shirt": "assets/shirt.png",
+    "arm_near": "assets/arm_near.png",
+    "shirt_near_sleeve": "assets/shirt_near_sleeve.png",
+    "foot_rear": "assets/foot_rear.png",
+    "foot_front": "assets/foot_front.png",
+    "shoe_rear": "assets/shoe_rear.png",
+    "shoe_front": "assets/shoe_front.png",
+    "head": "assets/head.png",
+    "hair_front": "assets/hair_front.png"
+  },
+  "alternateOutfit": {
+    "blue": {
+      "parts": {
+        "shirt": "assets/shirt_blue.png",
+        "shirt_far_sleeve": "assets/shirt_far_sleeve_blue.png",
+        "shirt_near_sleeve": "assets/shirt_near_sleeve_blue.png"
+      }
+    }
+  },
+  "designSource": "source/generate.py",
+  "warnings": [
+    "Art original vetorial paramétrica convertida em PNG; não extraída de PNG achatado",
+    "Movimentos interpolados por poses manuais; retoque pixel a pixel e revisão artística ainda pendentes",
+    "Este pacote é um piloto técnico; não substitui automaticamente o Discente no jogo principal"
+  ],
+  "characterSize": "182x320",
+  "abilityVfxSeparate": true
+}
