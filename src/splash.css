@@ -27,3 +27,121 @@ body:has(#screen-menu.active) main { min-height:100svh; }
  .splash-mobile-actions .splash-mobile-caption { display:block; color:#b9cee0; font-size:11px; text-align:center; margin-top:3px; }
 }
 @media (prefers-reduced-motion:reduce) { .splash-hotspot { transition:none; } }
+
+/* v1.2 | Transições dos botões a partir da arte oficial, sem redesenho. */
+.splash-frame::after {
+  content:"";
+  position:absolute;
+  z-index:1;
+  top:2%;left:23%;width:54%;height:37%;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,220,114,.15),rgba(80,155,255,.055) 41%,transparent 75%);
+  pointer-events:none;
+  opacity:.46;
+  animation:icenLogoGlow 6.5s ease-in-out infinite alternate;
+}
+@keyframes icenLogoGlow {
+  0% {opacity:.27;transform:scale(.97)}
+  100% {opacity:.65;transform:scale(1.04)}
+}
+/* Os botões são parte da imagem. Cada ::before recorta a mesma região do
+   WebP aprovado e amplia o RECORTE em hover, em vez de escalar só a hitbox. */
+.splash-hotspot {
+  --hover-light:rgba(87,178,255,.64);
+  z-index:3;
+  border:0;
+  cursor:pointer;
+  overflow:visible;
+  border-radius:11px;
+  background:transparent;
+  box-shadow:none;
+  transform-origin:50% 50%;
+  transform:translateZ(0) scale(1);
+  filter:none;
+  transition:transform .22s cubic-bezier(.22,.85,.27,1.23),filter .22s ease;
+}
+.splash-hotspot::before,
+.splash-hotspot::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  display:block;
+  pointer-events:none;
+  clip-path:polygon(7% 0,93% 0,100% 49%,93% 100%,7% 100%,0 49%);
+}
+.splash-hotspot::before {
+  background-image:url("../assets/menu/menu_principal_aprovado.webp");
+  background-size:var(--icen-bg-size-x) var(--icen-bg-size-y);
+  background-position:var(--icen-bg-pos-x) var(--icen-bg-pos-y);
+  background-repeat:no-repeat;
+  opacity:0;
+  transition:opacity .13s ease;
+}
+.splash-hotspot::after {
+  background:linear-gradient(112deg,transparent 15%,rgba(255,255,255,.16) 40%,rgba(255,255,255,.02) 61%,transparent 85%);
+  opacity:0;
+  transform:translateX(-85%);
+}
+.splash-hotspot--new {
+  --hover-light:rgba(255,178,54,.78);
+  --icen-bg-size-x:363.636%;--icen-bg-size-y:1307.190%;
+  --icen-bg-pos-x:49.724%;--icen-bg-pos-y:64.700%;
+}
+.splash-hotspot--continue {
+  --icen-bg-size-x:403.226%;--icen-bg-size-y:1515.152%;
+  --icen-bg-pos-x:49.335%;--icen-bg-pos-y:72.645%;
+}
+.splash-hotspot--options {
+  --icen-bg-size-x:403.226%;--icen-bg-size-y:1538.462%;
+  --icen-bg-pos-x:49.335%;--icen-bg-pos-y:80.428%;
+}
+.splash-hotspot--credits {
+  --icen-bg-size-x:403.226%;--icen-bg-size-y:1481.481%;
+  --icen-bg-pos-x:49.335%;--icen-bg-pos-y:88.418%;
+}
+.splash-hotspot:hover,
+.splash-hotspot:focus-visible {
+  background:transparent;
+  transform:translateZ(0) scale(1.058);
+  filter:brightness(1.14) drop-shadow(0 0 10px var(--hover-light)) drop-shadow(0 0 3px var(--hover-light));
+  box-shadow:none;
+}
+.splash-hotspot:hover::before,
+.splash-hotspot:focus-visible::before { opacity:1; }
+.splash-hotspot:hover::after,
+.splash-hotspot:focus-visible::after { opacity:1; animation:icenButtonSheen .68s ease-out both; }
+@keyframes icenButtonSheen {
+  from { transform:translateX(-85%);opacity:0; }
+  30% {opacity:.74;}
+  to { transform:translateX(90%);opacity:0; }
+}
+/* O botão ainda não liberado conserva o brilho ao passar o cursor,
+   mas não recebe navegação e anuncia que a função está pendente. */
+.splash-hotspot:disabled {cursor:default;}
+.splash-hotspot:focus-visible {
+  outline:2px solid #ffe69e;
+  outline-offset:3px;
+}
+/* Os quatro botões grandes exibidos em telas retrato recebem feedback também. */
+.splash-mobile-actions button {
+  transform:scale(1);
+  transform-origin:center;
+  transition:transform .2s cubic-bezier(.2,.8,.2,1.2),box-shadow .2s ease,filter .2s ease;
+}
+.splash-mobile-actions button:hover,
+.splash-mobile-actions button:focus-visible,
+.splash-mobile-actions button:active {
+  transform:scale(1.035);
+  filter:brightness(1.13);
+  box-shadow:0 0 15px rgba(85,179,255,.55),0 5px 20px #0009;
+}
+.splash-mobile-actions button:first-child:hover,
+.splash-mobile-actions button:first-child:focus-visible,
+.splash-mobile-actions button:first-child:active {
+  box-shadow:0 0 17px rgba(255,185,55,.63),0 6px 18px #0009;
+}
+.splash-mobile-actions button:disabled {opacity:.72;cursor:default;}
+@media (prefers-reduced-motion:reduce) {
+  .splash-frame::after {animation:none;opacity:.3;}
+  .splash-hotspot,.splash-hotspot::before,.splash-mobile-actions button {transition:none!important;}
+  .splash-hotspot::after {animation:none!important;}
+}
