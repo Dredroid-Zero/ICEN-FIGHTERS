@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#100d20" />
   <title>ICEN Fighters — Novo Jogo</title>
   <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="src/splash.css" />
 </head>
 <body>
   <div class="ambient-glow a"></div><div class="ambient-glow b"></div>
@@ -16,28 +17,26 @@
     </header>
     <main>
       <!-- INÍCIO: apenas Novo jogo habilitado na versão alfa. -->
+      <!-- TELA INICIAL OFICIAL aprovada 05/11/2026 -->
       <section class="screen screen-menu active" id="screen-menu" aria-labelledby="menu-title">
-        <div class="menu-background" role="img" aria-label="Campus das Auroras da UNILAB, cenário do jogo"></div>
-        <div class="menu-grid">
-          <div class="hero-copy">
-            <span class="eyebrow"><span class="eyebrow-line"></span> UM JOGO DE LUTA ACADÊMICO</span>
-            <p class="hero-pretitle">A GRADUAÇÃO É SUA</p>
-            <h1 id="menu-title"><span>MAIOR</span><em>LUTA.</em></h1>
-            <p class="hero-description">Enfrente as disciplinas, aprenda seus poderes e evolua até conquistar o diploma. A sua jornada começa com uma escolha: <b>quem você vai ser?</b></p>
-            <div class="hero-stats"><span><b>01</b> CAMINHO INICIAL</span><span><b>05</b> ESPAÇOS DE SAVE</span><span><b>∞</b> POTENCIAL</span></div>
-          </div>
-          <nav class="menu-card" aria-label="Menu principal">
-            <div class="menu-card-top"><span class="menu-number">01 / MENU PRINCIPAL</span><span class="sparkle">✧</span></div>
-            <h2>Sua jornada começa aqui</h2>
-            <p class="menu-subtitle">Tudo começa com o seu Discente.</p>
-            <button class="menu-action primary" id="btn-new-game"><span class="action-icon">✦</span><span class="action-text"><b>NOVO JOGO</b><small>Criar meu personagem</small></span><span class="action-arrow">↗</span></button>
-            <button class="menu-action inactive" disabled><span class="action-icon">▣</span><span class="action-text"><b>CONTINUAR</b><small>Até 5 espaços de progresso</small></span><span class="soon">EM BREVE</span></button>
-            <button class="menu-action inactive" disabled><span class="action-icon">⚙</span><span class="action-text"><b>OPÇÕES</b><small>Áudio, vídeo e controles</small></span><span class="soon">EM BREVE</span></button>
-            <button class="menu-action inactive" disabled><span class="action-icon">◈</span><span class="action-text"><b>CRÉDITOS</b><small>Equipe e referências</small></span><span class="soon">EM BREVE</span></button>
-            <p class="menu-footnote"><span class="gold-mark">✳</span> Protótipo da interface — combate em desenvolvimento.</p>
+        <h1 id="menu-title" class="splash-sr-only">ICEN Fighters — Menu principal</h1>
+        <div class="splash-frame">
+          <img class="splash-art" src="assets/menu/menu_principal_aprovado.webp" width="1672" height="941"
+               alt="" aria-hidden="true" fetchpriority="high" decoding="async" draggable="false" />
+          <nav aria-label="Menu principal">
+            <button type="button" id="btn-new-game" class="splash-hotspot splash-hotspot--new" aria-label="Novo jogo — criar Discente" title="Novo jogo"><span class="splash-sr-only">Novo jogo</span></button>
+            <button type="button" class="splash-hotspot splash-hotspot--continue" disabled aria-label="Continuar — em breve" title="Continuar em desenvolvimento"><span class="splash-sr-only">Continuar — em breve</span></button>
+            <button type="button" class="splash-hotspot splash-hotspot--options" disabled aria-label="Opções — em breve" title="Opções em desenvolvimento"><span class="splash-sr-only">Opções — em breve</span></button>
+            <button type="button" class="splash-hotspot splash-hotspot--credits" disabled aria-label="Créditos — em breve" title="Créditos em desenvolvimento"><span class="splash-sr-only">Créditos — em breve</span></button>
           </nav>
         </div>
-        <div class="menu-bottom"><span>ICEN / UNILAB — CAMPUS DAS AURORAS</span><span>ETAPA ATUAL · MENU + PERSONALIZAÇÃO</span></div>
+        <nav class="splash-mobile-actions" aria-label="Menu principal para celular">
+          <button type="button" id="btn-new-game-mobile">NOVO JOGO</button>
+          <button type="button" disabled>CONTINUAR</button>
+          <button type="button" disabled>OPÇÕES</button>
+          <button type="button" disabled>CRÉDITOS</button>
+          <span class="splash-mobile-caption">Gire o celular para ver a arte completa</span>
+        </nav>
       </section>
 
       <section class="screen screen-editor" id="screen-editor" aria-labelledby="editor-title" hidden>

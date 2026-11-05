@@ -43,3 +43,12 @@ Identificamos limitações de rolagem na interface v0.2 e de anatomia/animação
 - [Plano de construção do ICEN Studio](docs/PROPOSTA_ICEN_STUDIO_FERRAMENTA_PERSONAGENS_v01.md).
 
 O manequim da prévia é somente um marcador técnico, não o sprite final. **A página inicial atual permanece intacta até a aprovação visual.**
+
+
+## Menu principal oficial aprovado — 05/11/2026
+
+A tela inicial publicada usa a arte aprovada com os quatro lutadores de Matemática, Biologia, Física e Química no Campus das Auroras. O PNG original foi preservado no [Drive (arte oficial)](https://drive.google.com/drive/folders/1CJtYc6mM3w1tXzVGhh_O1nAZWwiHmlzG), e a versão WebP está em `assets/menu/menu_principal_aprovado.webp`.
+
+**Novo Jogo** utiliza um botão HTML acessível posicionado sobre a arte, conectado ao criador do Discente já existente. Continuar, Opções e Créditos permanecem desabilitados. Em celular vertical, botões maiores ficam abaixo da imagem. Trata-se da arte oficial do menu, não de sprites de combate.
+
+Consulte `docs/MENU_OFICIAL_V1.md`.

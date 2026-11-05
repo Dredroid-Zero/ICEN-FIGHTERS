@@ -1,0 +1,29 @@
+/* ICEN FIGHTERS | Tela de título oficial aprovada 05-11-2026. */
+body:has(#screen-menu.active) { overflow:hidden; height:100svh; }
+body:has(#screen-menu.active) .topbar { display:none; }
+body:has(#screen-menu.active) main { min-height:100svh; }
+#screen-menu.active { position:fixed; inset:0; display:grid; place-items:center; min-height:0; width:100vw; height:100svh; overflow:hidden; background:#04101b; z-index:20; }
+.splash-frame { position:relative; width:min(100vw,177.683svh); aspect-ratio:1672/941; overflow:hidden; isolation:isolate; box-shadow:0 0 0 1px #0008; }
+.splash-art { display:block; width:100%; height:100%; object-fit:contain; user-select:none; -webkit-user-drag:none; pointer-events:none; }
+.splash-hotspot { position:absolute; z-index:2; display:block; border:2px solid transparent; padding:0; margin:0; border-radius:9px; background:transparent; color:transparent; outline:none; cursor:pointer; transition:background .15s ease,box-shadow .15s ease; }
+.splash-hotspot:hover:not(:disabled) { background:rgba(255,211,77,.13); box-shadow:inset 0 0 24px rgba(255,204,64,.28),0 0 14px rgba(255,186,53,.4); }
+.splash-hotspot:focus-visible { border:2px solid #fff5cb; outline:3px solid #ffb22d; outline-offset:1px; background:rgba(255,207,83,.18); }
+.splash-hotspot:disabled { cursor:default; }
+.splash-hotspot--new { left:36.05%; top:59.75%; width:27.5%; height:7.65%; }
+.splash-hotspot--continue { left:37.1%; top:67.85%; width:24.8%; height:6.6%; }
+.splash-hotspot--options { left:37.1%; top:75.2%; width:24.8%; height:6.5%; }
+.splash-hotspot--credits { left:37.1%; top:82.45%; width:24.8%; height:6.75%; }
+.splash-sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+.splash-mobile-actions { display:none; }
+@media (max-aspect-ratio:3/4) {
+ #screen-menu.active { background:linear-gradient(180deg,#132c38 0%,#080f21 70%); }
+ .splash-frame { width:100vw; margin-top:-60svh; }
+ .splash-hotspot { display:none; }
+ .splash-mobile-actions { position:absolute; z-index:30; top:39svh; left:max(16px,6vw); right:max(16px,6vw); display:grid; gap:9px; }
+ .splash-mobile-actions button { min-height:49px; padding:10px 16px; border:1px solid #609bc8; border-radius:9px; background:linear-gradient(110deg,#102b45,#081a32); color:#e8f6ff; font-size:15px; letter-spacing:.07em; font-weight:800; box-shadow:0 4px 18px #0008; }
+ .splash-mobile-actions button:first-child { background:linear-gradient(110deg,#ffb733,#dd7520); border-color:#ffe192; color:#191528; }
+ .splash-mobile-actions button:disabled { opacity:.48; }
+ .splash-mobile-actions button:focus-visible { outline:3px solid #ffe196; outline-offset:2px; }
+ .splash-mobile-actions .splash-mobile-caption { display:block; color:#b9cee0; font-size:11px; text-align:center; margin-top:3px; }
+}
+@media (prefers-reduced-motion:reduce) { .splash-hotspot { transition:none; } }

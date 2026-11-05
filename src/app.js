@@ -69,6 +69,7 @@ function drawMiniatures(){
 function install(){
  createButtons();renderSelected();
  $('btn-new-game').addEventListener('click',()=>{state.step=1;state.maxStep=1;state.character=structuredClone(C.defaultCharacter);$('player-name').value='';$('name-error').hidden=true;renderSelected();switchStep(1);activate('editor')});
+ $('btn-new-game-mobile')?.addEventListener('click',()=> $('btn-new-game').click());
  $('btn-back-menu').addEventListener('click',()=>activate('menu'));
  $('player-name').addEventListener('input',e=>{state.character.name=e.target.value;updateHeader();$('name-error').hidden=true;e.target.removeAttribute('aria-invalid')});
  const mappings=[['body-model-options','model','model'],['skin-swatches','skin','skin'],['hair-swatches','hairColor','hairColor'],['hairstyles','hair','hairStyle'],['outfits','outfit','outfit'],['accessories','accessory','accessory']];
