@@ -1,0 +1,336 @@
+{
+  "format": "icen-fighters-modular-rig-demo-v0.2",
+  "status": "prototype_not_final_sprites",
+  "characterId": "discente.masculino.02",
+  "pose": "guard",
+  "imageWidth": 182,
+  "imageHeight": 320,
+  "description": "Alpha sprites separated from approved conceptual reference, with a modest idle animation on separate layers. Inferred/flattened content and underpaint need hand redraw for production-ready modular costumes.",
+  "referenceImage": "guard_full_reference.png",
+  "canonicalRig": "icen_humanoid_v1",
+  "skeleton": {
+    "root": [
+      83,
+      314
+    ],
+    "pelvis": [
+      83,
+      174
+    ],
+    "chest": [
+      89,
+      109
+    ],
+    "head": [
+      97,
+      55
+    ],
+    "shoulder_screen_left": [
+      54,
+      99
+    ],
+    "elbow_screen_left": [
+      55,
+      130
+    ],
+    "wrist_screen_left": [
+      87,
+      106
+    ],
+    "shoulder_screen_right": [
+      117,
+      101
+    ],
+    "elbow_screen_right": [
+      134,
+      129
+    ],
+    "wrist_screen_right": [
+      139,
+      98
+    ],
+    "knee_screen_left": [
+      45,
+      227
+    ],
+    "knee_screen_right": [
+      145,
+      228
+    ],
+    "ankle_screen_left": [
+      24,
+      282
+    ],
+    "ankle_screen_right": [
+      145,
+      282
+    ]
+  },
+  "parts": [
+    {
+      "id": "shoe_rear",
+      "file": "assets/parts/shoe_rear.png",
+      "pivot": [
+        20,
+        300
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "calf_rear",
+      "file": "assets/parts/calf_rear.png",
+      "pivot": [
+        30,
+        274
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "thigh_rear",
+      "file": "assets/parts/thigh_rear.png",
+      "pivot": [
+        51,
+        213
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "shoe_front",
+      "file": "assets/parts/shoe_front.png",
+      "pivot": [
+        144,
+        301
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "calf_front",
+      "file": "assets/parts/calf_front.png",
+      "pivot": [
+        145,
+        279
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "thigh_front",
+      "file": "assets/parts/thigh_front.png",
+      "pivot": [
+        130,
+        215
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "shorts",
+      "file": "assets/parts/shorts.png",
+      "pivot": [
+        85,
+        173
+      ],
+      "category": "lower-body",
+      "idleGroup": "lower",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "arm_rear_upper",
+      "file": "assets/parts/arm_rear_upper.png",
+      "pivot": [
+        119,
+        101
+      ],
+      "category": "upper-body",
+      "idleGroup": "upper",
+      "textureDependsOnCostume": true
+    },
+    {
+      "id": "arm_rear_forearm",
+      "file": "assets/parts/arm_rear_forearm.png",
+      "pivot": [
+        138,
+        122
+      ],
+      "category": "upper-body",
+      "idleGroup": "upper",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "torso",
+      "file": "assets/parts/torso.png",
+      "pivot": [
+        87,
+        165
+      ],
+      "category": "upper-body",
+      "idleGroup": "upper",
+      "textureDependsOnCostume": true
+    },
+    {
+      "id": "arm_near_upper",
+      "file": "assets/parts/arm_near_upper.png",
+      "pivot": [
+        54,
+        102
+      ],
+      "category": "upper-body",
+      "idleGroup": "upper",
+      "textureDependsOnCostume": true
+    },
+    {
+      "id": "arm_near_forearm",
+      "file": "assets/parts/arm_near_forearm.png",
+      "pivot": [
+        58,
+        127
+      ],
+      "category": "upper-body",
+      "idleGroup": "upper",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "neck",
+      "file": "assets/parts/neck.png",
+      "pivot": [
+        88,
+        88
+      ],
+      "category": "upper-body",
+      "idleGroup": "head",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "head",
+      "file": "assets/parts/head.png",
+      "pivot": [
+        93,
+        76
+      ],
+      "category": "upper-body",
+      "idleGroup": "head",
+      "textureDependsOnCostume": false
+    },
+    {
+      "id": "hair",
+      "file": "assets/parts/hair.png",
+      "pivot": [
+        98,
+        61
+      ],
+      "category": "upper-body",
+      "idleGroup": "head",
+      "textureDependsOnCostume": false
+    }
+  ],
+  "costumeColorTests": {
+    "default": null,
+    "oceano": {
+      "tintForParts": {
+        "torso": "assets/parts/torso__oceano.png",
+        "arm_rear_upper": "assets/parts/arm_rear_upper__oceano.png",
+        "arm_near_upper": "assets/parts/arm_near_upper__oceano.png"
+      }
+    },
+    "vinho": {
+      "tintForParts": {
+        "torso": "assets/parts/torso__vinho.png",
+        "arm_rear_upper": "assets/parts/arm_rear_upper__vinho.png",
+        "arm_near_upper": "assets/parts/arm_near_upper__vinho.png"
+      }
+    }
+  },
+  "animation": {
+    "name": "idle",
+    "fpsDisplay": 12,
+    "loopFrames": 12,
+    "keyframes": {
+      "upperDy": [
+        0,
+        -1,
+        -1,
+        -2,
+        -2,
+        -2,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "headDy": [
+        0,
+        -1,
+        -2,
+        -2,
+        -3,
+        -2,
+        -2,
+        -1,
+        -1,
+        0,
+        0,
+        0
+      ],
+      "upperSwayDeg": [
+        0,
+        0.1,
+        0.2,
+        0.3,
+        0.3,
+        0.1,
+        0,
+        -0.1,
+        -0.2,
+        -0.1,
+        0,
+        0
+      ]
+    }
+  },
+  "reservedSlots": [
+    "hair_front",
+    "hair_back",
+    "body",
+    "top_torso",
+    "sleeve_near",
+    "sleeve_far",
+    "bottom",
+    "shoes",
+    "accessory_head",
+    "accessory_hand",
+    "vfx_hand"
+  ],
+  "warnings": [
+    "Current source is a composited pixel-art drawing; garment geometry and covered regions are not reconstructed.",
+    "Joint placements from concept artwork are approximate; idle transforms were constrained to minimize seam openings.",
+    "No true articulated walk/punch/kick frames are supplied; drawing and retouching are required.",
+    "Reference colors have minor alpha-extraction imperfections near dark outlines; subject to manual QA."
+  ],
+  "criteriaPassed": [
+    "Individual transparent PNGs",
+    "Original composite pixel coverage restored",
+    "Independent limb texture files",
+    "Visible idle upper body motion",
+    "Ground anchor stable in idle",
+    "Clothing color overlays move with upper body"
+  ],
+  "criteriaPending": [
+    "Original redraw of occluded limbs",
+    "Articulated actions with larger joint travel",
+    "Independent replaceable full outfits",
+    "Animation evaluation for 6 body meshes",
+    "Combat engine integration"
+  ]
+}

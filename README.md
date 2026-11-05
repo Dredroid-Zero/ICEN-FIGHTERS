@@ -106,3 +106,8 @@ Corrigida a duplicação de abas, textos e opções no editor da Aparência. A a
 A **Opção 2 masculina** da última folha de estudo anatômico foi selecionada como referência para o primeiro rig. Foi criado um [laboratório de calibração de articulações](tools/rig_m02/rig_lab_m02.html), com as vistas de frente/guarda, 18 juntas estimadas, sockets para peças cosméticas e exportação de JSON. Não é spritesheet jogável nem animação implementada: o desenho ainda precisará ser separado em peças originais com transparência.
 
 [Documentação](docs/RIG_PILOTO_DISCENTE_MASCULINO_02_V01.md) · [arquivos e folha aprovada no Drive](https://drive.google.com/drive/folders/1WmgfdMwB75Vxa4h8jiWzvNOCMfwdpLcH). Nenhuma tela de jogo, motor de combate ou perfil salvo foi alterado.
+
+
+## Laboratório idle v0.2 — Masculino opção 2 (05/11/2026)
+
+[**Abrir laboratório de animação**](tools/rig_m02/idle_v02/rig_idle_lab.html) — primeiro teste do Discente com **15 peças PNG transparentes** (pacote original no Drive) e **12 quadros temporais de guarda parada (idle)**. A versão HTML em GitHub Pages inclui as texturas embutidas, controle de pausa/frame, inspeção de partes, referência, espelhamento e teste de cor de camiseta. O piloto foi testado em Chromium 1366×768 e 390×844 sem erro de JavaScript ou rolagem horizontal. **Não é arte definitiva**: partes foram segmentadas da ilustração-base; roupas e articulações ocultas precisarão ser redesenhadas. Os demais movimentos e a integração à criação de Discente continuam pendentes. Consulte [documentação](docs/RIG_PILOTO_DISCENTE_MASCULINO_02_V02.md) e [Drive — pacote e fontes](https://drive.google.com/drive/folders/12F8FYNFdxHdhaEXKe8jw9YUqv3WUYbMx).
