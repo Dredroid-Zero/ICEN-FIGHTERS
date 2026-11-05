@@ -18,7 +18,7 @@ Se o endereço ainda não abrir, no GitHub acesse **Settings → Pages → Build
 - Pré-visualização e gravação local de até cinco perfis.
 - **Ainda não há combate, tutorial, matrícula ou continuação de campanha nesta versão.** Os outros botões do menu permanecem desabilitados.
 
-A página de entrada `index.html` é uma versão autossuficiente para funcionar no GitHub Pages sem servidor ou dependências. Os arquivos-fonte modulares serão mantidos em `src/` e `assets/` nas próximas entregas do desenvolvimento.
+A página de entrada `index.html` é uma versão autossuficiente para funcionar no GitHub Pages sem servidor ou dependências. Os **arquivos-fonte modulares já estão publicados** em `src/` (interface, dados e poderes separados) e `assets/` (cenário e 51 PNGs individuais para corpo, cabelo, roupas e acessórios). O `index.html` carrega esses arquivos diretamente.
 
 ## Organização e documentação
 
