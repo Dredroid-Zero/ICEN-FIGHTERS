@@ -99,3 +99,10 @@ Arquivos: `src/central_discente_v09.js`, `src/central_discente_v09.css` e [docum
 Corrigida a duplicação de abas, textos e opções no editor da Aparência. A arte aprovada tinha controles desenhados nela; os elementos HTML reais eram sobrepostos sobre uma base transparente. Um **painel interno opaco**, mantendo paleta, moldura e botões azul/dourado, agora cobre a impressão estática e apresenta apenas uma cópia interativa de cada controle. A aba Aparência da ficha também ganhou hover compatível com a arte. O painel central, a build, os saves e a lógica de Voltar/Confirmar foram preservados. O novo CSS `src/central_discente_v10.css` carrega depois da v0.9. Testes locais em cinco resoluções, sem erros de JavaScript e com cancelamento/salvamento corretos.
 
 [Documentação técnica](docs/CENTRAL_DISCENTE_V10.md) · [Capturas e arquivos no Drive](https://drive.google.com/drive/folders/13yqS0Ah6ejMfXpARz42SIdttuipryH8I).
+
+
+## Piloto de rig — Discente Masculino, Opção 2 (05/11/2026)
+
+A **Opção 2 masculina** da última folha de estudo anatômico foi selecionada como referência para o primeiro rig. Foi criado um [laboratório de calibração de articulações](tools/rig_m02/rig_lab_m02.html), com as vistas de frente/guarda, 18 juntas estimadas, sockets para peças cosméticas e exportação de JSON. Não é spritesheet jogável nem animação implementada: o desenho ainda precisará ser separado em peças originais com transparência.
+
+[Documentação](docs/RIG_PILOTO_DISCENTE_MASCULINO_02_V01.md) · [arquivos e folha aprovada no Drive](https://drive.google.com/drive/folders/1WmgfdMwB75Vxa4h8jiWzvNOCMfwdpLcH). Nenhuma tela de jogo, motor de combate ou perfil salvo foi alterado.

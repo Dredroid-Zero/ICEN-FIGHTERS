@@ -1,0 +1,344 @@
+{
+  "format": "icen.rig-pilot.v0.1",
+  "project": "ICEN Fighters",
+  "character": "discente_masculino_02",
+  "state": "DRAFT_JOINT_MARKERS_NOT_ANIMATED",
+  "approvedReference": "folha_anatomica_aprovada.png",
+  "sourceCropWarning": "Cropping reference art does not create independent, animatable body sprites.",
+  "viewNote": "Frente e guarda são duas imagens de referência da mesma figura. Coordenadas iniciais aproximadas, calibráveis no laboratório.",
+  "rigConvention": {
+    "canonicalSkeletonId": "icen_humanoid_v1",
+    "scaleUnit": "reference-image-pixels",
+    "poseCoordinatesAreLocalToEachImage": true,
+    "groundReference": "root; plantas dos pés a calibrar",
+    "leftRight": "L/R anatômico; conferir com a direção de câmera",
+    "inheritance": "Mesmos nomes/hierarquia de juntas para todos os seis corpos; offsets e silhueta adaptados a cada perfil",
+    "pixelPerfect": "Exportar imagens em pixel art sem suavização; pós-arte por frame em extremidades e expressões",
+    "combat": "hitboxes/hurtboxes independentes da aparência; não atrelar força/velocidade à silhueta"
+  },
+  "joints": [
+    {
+      "id": "root",
+      "parent": null
+    },
+    {
+      "id": "pelvis",
+      "parent": "root"
+    },
+    {
+      "id": "spine",
+      "parent": "pelvis"
+    },
+    {
+      "id": "chest",
+      "parent": "spine"
+    },
+    {
+      "id": "neck",
+      "parent": "chest"
+    },
+    {
+      "id": "head",
+      "parent": "neck"
+    },
+    {
+      "id": "shoulder_L",
+      "parent": "chest"
+    },
+    {
+      "id": "elbow_L",
+      "parent": "shoulder_L"
+    },
+    {
+      "id": "wrist_L",
+      "parent": "elbow_L"
+    },
+    {
+      "id": "shoulder_R",
+      "parent": "chest"
+    },
+    {
+      "id": "elbow_R",
+      "parent": "shoulder_R"
+    },
+    {
+      "id": "wrist_R",
+      "parent": "elbow_R"
+    },
+    {
+      "id": "hip_L",
+      "parent": "pelvis"
+    },
+    {
+      "id": "knee_L",
+      "parent": "hip_L"
+    },
+    {
+      "id": "ankle_L",
+      "parent": "knee_L"
+    },
+    {
+      "id": "hip_R",
+      "parent": "pelvis"
+    },
+    {
+      "id": "knee_R",
+      "parent": "hip_R"
+    },
+    {
+      "id": "ankle_R",
+      "parent": "knee_R"
+    }
+  ],
+  "poses": {
+    "front": {
+      "image": "masculino_opcao_2_frente_ref.png",
+      "imageSize": [
+        154,
+        326
+      ],
+      "anchors": {
+        "root": [
+          80,
+          310
+        ],
+        "pelvis": [
+          81,
+          168
+        ],
+        "spine": [
+          81,
+          126
+        ],
+        "chest": [
+          81,
+          91
+        ],
+        "neck": [
+          81,
+          61
+        ],
+        "head": [
+          82,
+          38
+        ],
+        "shoulder_L": [
+          42,
+          84
+        ],
+        "elbow_L": [
+          33,
+          137
+        ],
+        "wrist_L": [
+          28,
+          177
+        ],
+        "shoulder_R": [
+          117,
+          83
+        ],
+        "elbow_R": [
+          126,
+          137
+        ],
+        "wrist_R": [
+          132,
+          174
+        ],
+        "hip_L": [
+          57,
+          180
+        ],
+        "knee_L": [
+          51,
+          230
+        ],
+        "ankle_L": [
+          44,
+          279
+        ],
+        "hip_R": [
+          105,
+          180
+        ],
+        "knee_R": [
+          103,
+          232
+        ],
+        "ankle_R": [
+          115,
+          279
+        ]
+      }
+    },
+    "guard": {
+      "image": "masculino_opcao_2_guarda_ref.png",
+      "imageSize": [
+        157,
+        326
+      ],
+      "anchors": {
+        "root": [
+          65,
+          310
+        ],
+        "pelvis": [
+          64,
+          171
+        ],
+        "spine": [
+          70,
+          139
+        ],
+        "chest": [
+          71,
+          105
+        ],
+        "neck": [
+          65,
+          77
+        ],
+        "head": [
+          59,
+          51
+        ],
+        "shoulder_L": [
+          35,
+          101
+        ],
+        "elbow_L": [
+          35,
+          127
+        ],
+        "wrist_L": [
+          69,
+          105
+        ],
+        "shoulder_R": [
+          89,
+          101
+        ],
+        "elbow_R": [
+          102,
+          121
+        ],
+        "wrist_R": [
+          105,
+          92
+        ],
+        "hip_L": [
+          54,
+          180
+        ],
+        "knee_L": [
+          30,
+          230
+        ],
+        "ankle_L": [
+          12,
+          281
+        ],
+        "hip_R": [
+          92,
+          176
+        ],
+        "knee_R": [
+          113,
+          218
+        ],
+        "ankle_R": [
+          119,
+          280
+        ]
+      }
+    }
+  },
+  "sockets": [
+    {
+      "id": "hair_back",
+      "parent": "head",
+      "purpose": "cabelo atrás da cabeça"
+    },
+    {
+      "id": "hair_front",
+      "parent": "head",
+      "purpose": "franja/cabelo dianteiro"
+    },
+    {
+      "id": "hat",
+      "parent": "head",
+      "purpose": "chapéus"
+    },
+    {
+      "id": "face",
+      "parent": "head",
+      "purpose": "óculos/máscaras"
+    },
+    {
+      "id": "top_torso",
+      "parent": "chest",
+      "purpose": "traje superior, máscara ajustada à silhueta"
+    },
+    {
+      "id": "bottom_pelvis",
+      "parent": "pelvis",
+      "purpose": "traje inferior"
+    },
+    {
+      "id": "left_hand",
+      "parent": "wrist_L",
+      "purpose": "luvas e poderes empunhados"
+    },
+    {
+      "id": "right_hand",
+      "parent": "wrist_R",
+      "purpose": "luvas e poderes empunhados"
+    },
+    {
+      "id": "left_foot",
+      "parent": "ankle_L",
+      "purpose": "calçados"
+    },
+    {
+      "id": "right_foot",
+      "parent": "ankle_R",
+      "purpose": "calçados"
+    },
+    {
+      "id": "back_accessory",
+      "parent": "chest",
+      "purpose": "mochilas, capas; layer anterior/posterior dependente da pose"
+    },
+    {
+      "id": "vfx_origin",
+      "parent": "chest",
+      "purpose": "efeitos das habilidades em módulo independente"
+    }
+  ],
+  "renderLayers": [
+    "back_accessory",
+    "hair_back",
+    "leg_far",
+    "bottom",
+    "torso",
+    "arm_far",
+    "arm_near",
+    "hair_front",
+    "face",
+    "top_front",
+    "accessory_front",
+    "vfx"
+  ],
+  "requiredMotionIDs": [
+    "idle",
+    "walk_fwd",
+    "jump",
+    "punch_light",
+    "kick_light"
+  ],
+  "animationsImplemented": [],
+  "nextMilestone": "Arte recortada em partes originais + rig real da pose guarda + um ciclo idle de teste. Sem publicar no jogo até passar QA.",
+  "bodyFitRule": "Roupas superiores/inferiores precisam de variantes de encaixe para as seis silhuetas; não aplicar escala x indiscriminada.",
+  "licenseNote": "Arte de referência aprovada no próprio projeto. Sem redistribuição de sprites/fonte de terceiros."
+}
