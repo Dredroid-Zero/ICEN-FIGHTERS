@@ -92,3 +92,10 @@ Foram aprovadas e publicadas **duas artes de criação do Discente**: ficha fech
 **A plataforma e o manequim holográfico centrais continuam temporários**; quando houver o sprite mestre modular, a apresentação 2D e a plataforma deverão ser revistas em conjunto. O tutorial e a integração com a engine de combate ainda não estão prontos.
 
 Arquivos: `src/central_discente_v09.js`, `src/central_discente_v09.css` e [documentação](docs/CENTRAL_DISCENTE_V09.md). [Materiais, testes e artes no Drive](https://drive.google.com/drive/folders/1s35nAbvI1VqKUBPSQmOEjAHWPzwDHvfA).
+
+
+## Central do Discente v0.10 — correção da Aparência (05/11/2026)
+
+Corrigida a duplicação de abas, textos e opções no editor da Aparência. A arte aprovada tinha controles desenhados nela; os elementos HTML reais eram sobrepostos sobre uma base transparente. Um **painel interno opaco**, mantendo paleta, moldura e botões azul/dourado, agora cobre a impressão estática e apresenta apenas uma cópia interativa de cada controle. A aba Aparência da ficha também ganhou hover compatível com a arte. O painel central, a build, os saves e a lógica de Voltar/Confirmar foram preservados. O novo CSS `src/central_discente_v10.css` carrega depois da v0.9. Testes locais em cinco resoluções, sem erros de JavaScript e com cancelamento/salvamento corretos.
+
+[Documentação técnica](docs/CENTRAL_DISCENTE_V10.md) · [Capturas e arquivos no Drive](https://drive.google.com/drive/folders/13yqS0Ah6ejMfXpARz42SIdttuipryH8I).
