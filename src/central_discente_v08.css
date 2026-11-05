@@ -1,0 +1,123 @@
+/* ICEN Fighters • Central v0.8 — consistência visual e navegação contextual.
+  A arte de Aparência aberta faz parte do jogo; as opções continuam HTML reais. */
+.cv5-stage .cv8-open-art{
+ position:absolute;inset:0;width:100%;height:100%;z-index:7;object-fit:fill;
+ opacity:0;pointer-events:none;user-select:none;
+ clip-path:inset(86% 65.15% 9% 0%);
+ transition:clip-path .42s cubic-bezier(.2,.82,.22,1),opacity .12s ease;
+}
+.cv5.cv6-appearance-open .cv8-open-art{
+ opacity:1;clip-path:inset(15.2% 65.15% 9% 0%);
+}
+/* A parte impressa no fundo parecia um seletor horizontal. Cobrir as
+   setas antigas com um único botão de abertura vertical inspirado no jogo. */
+.cv5-stage .cv5-appearance{z-index:6;isolation:isolate;}
+.cv5-stage .cv5-appearance::before{
+ content:"";position:absolute;left:2%;right:2%;top:34%;height:56%;
+ clip-path:polygon(7% 0,93% 0,100% 50%,93% 100%,7% 100%,0 50%);
+ background:linear-gradient(180deg,#185988 0%,#06172e 28%,#082848 76%,#154c77 100%);
+ border-top:2px solid #f2c75b;border-bottom:2px solid #f2b74b;
+ box-shadow:inset 0 0 0 2px #2a88c3,inset 0 0 24px #35b2f94d,0 0 14px #f6bd4a66;
+}
+.cv5-stage .cv5-appearance::after{
+ content:"▲   ABRIR PERSONALIZAÇÃO";position:absolute;inset:34% 3% 10%;
+ display:flex;justify-content:center;align-items:center;text-align:center;
+ color:#fff5db;font-size:clamp(9px,1.07vw,18px);font-weight:1000;letter-spacing:.025em;
+ text-shadow:0 2px 2px #000,0 0 11px #2ac5ff;
+}
+.cv5-stage .cv5-appearance:hover::before,.cv5-stage .cv5-appearance:focus-visible::before{filter:brightness(1.25)}
+.cv5-stage .cv5-appearance:hover::after{transform:translateY(-2px)}
+/* A aba original da arte aberta já tem moldura, cabeçalho e ornamentos.
+   Não desenhar outra moldura por cima dela. */
+.cv8-open-art ~ .cv8-paint-top-back{position:absolute;z-index:11;
+ left:25.65%;top:31.75%;width:5.95%;height:3.55%;pointer-events:none;
+ background:linear-gradient(160deg,#06213d,#061b34 45%,#081e38);
+ box-shadow:0 0 0 4px #051c34;
+ border-radius:4px;opacity:0;transition:opacity .15s ease;
+}
+.cv5.cv6-appearance-open .cv8-paint-top-back{opacity:1}
+.cv6-appearance-pane{
+ z-index:12;left:4.8%;top:35.6%;width:27.3%;height:45.5%;
+ border:0;clip-path:none;border-radius:0;background:transparent;box-shadow:none;
+ transform:translate3d(0,28%,0);opacity:0;isolation:isolate;
+ transition:transform .4s cubic-bezier(.22,.8,.25,1),opacity .22s ease,visibility 0s linear .4s;
+}
+.cv5.cv6-appearance-open .cv6-appearance-pane{transform:translate3d(0,0,0);opacity:1;transition-delay:0s;}
+.cv6-appearance-pane::before,.cv6-appearance-pane::after{display:none;}
+.cv6-pane-header{display:none!important}
+.cv6-tabs{padding:4px 3px 6px;gap:5px;grid-template-columns:1fr 1fr;}
+.cv6-tabs button{
+ min-height:clamp(30px,2.7vw,44px);border-radius:8px;border:2px solid #42bdf2;
+ background:linear-gradient(180deg,#075182,#062747 48%,#092442);
+ font-family:inherit;font-size:clamp(9px,.96vw,15px);font-weight:1000;
+ color:#e7f7ff;box-shadow:inset 0 1px 0 #c7f8ff6b,0 2px 7px #03101b8c;
+ text-shadow:0 1px 2px #000;
+}
+.cv6-tabs button[aria-selected=true]{
+ color:#211604;background:linear-gradient(180deg,#ffe68a,#f4b633 58%,#c57b16);
+ border-color:#ffe8a6;box-shadow:0 0 11px #f9c65795,inset 0 1px 0 #fff6c2;
+ text-shadow:none;
+}
+.cv6-options-scroll{
+ border-radius:4px;border:1px solid #1c5d92;border-top:2px solid #d99f31;
+ background:linear-gradient(165deg,#082647,#031830 60%,#051d35);
+ box-shadow:inset 0 0 22px #041226,inset 0 1px 1px #59c1fa5e;
+ padding:8px 10px 6px;overflow-y:auto;
+}
+.cv6-options-scroll h3{font-size:clamp(10px,.9vw,14px);color:#ffcb63;text-shadow:0 1px 3px #000;margin:6px 0 8px;}
+.cv6-options-scroll .cv5-options{margin:0 0 11px;gap:7px;}
+.cv6-options-scroll .cv5-choice{
+ background:linear-gradient(#0e4678,#062747);border:2px solid #52bafb;
+ border-radius:7px;font-size:clamp(10px,.88vw,14px);padding:8px 11px;
+}
+.cv6-options-scroll .cv5-choice[aria-pressed=true]{
+ color:#281802;background:linear-gradient(#ffe787,#f2ab2c);
+ border-color:#ffec9d;box-shadow:0 0 11px #ffc85786;
+}
+.cv6-options-scroll .cv5-swatch{width:clamp(25px,2.05vw,36px);height:clamp(25px,2.05vw,36px);}
+.cv6-pane-footer{padding:5px 3px 1px;background:transparent;border:none;gap:8px;}
+.cv6-pane-footer button{
+ min-height:clamp(31px,3.05vw,47px);border:2px solid #60c5fa;border-radius:8px;
+ color:#ecfaff;background:linear-gradient(180deg,#12649e,#04375e 52%,#061d36);
+ box-shadow:0 0 12px #25c1fd73,inset 0 1px #abebff;
+ font-size:clamp(10px,.93vw,15px);
+}
+.cv6-pane-footer button:last-child{
+ color:#221807;border-color:#ffdf81;background:linear-gradient(#ffe99a,#f4b93f 55%,#c88117);
+ box-shadow:0 0 14px #f7bd4b8b,inset 0 1px #fff8c0;
+}
+.cv5.cv6-appearance-open .cv5-back,.cv5.cv6-appearance-open .cv5-confirm{
+ z-index:15;pointer-events:auto;cursor:pointer;
+}
+/* Opcional: quando a aparência está aberta, o botão inferior VOLTAR
+   cancela a edição e CONFIRMAR salva o visual, sem criar perfil. */
+@media(max-height:750px) and (min-aspect-ratio:4/5){
+ .cv6-tabs{padding-top:2px;padding-bottom:3px;}
+ .cv6-tabs button{min-height:26px;font-size:clamp(8px,.88vw,12px);}
+ .cv6-options-scroll{padding-top:4px;}
+ .cv6-options-scroll h3{margin:3px 0 5px;}
+ .cv6-options-scroll .cv5-options{margin-bottom:7px;}
+ .cv6-pane-footer{padding-top:3px;}
+ .cv6-pane-footer button{min-height:28px;}
+}
+@media(max-aspect-ratio:4/5),(max-width:650px){
+ .cv5-stage .cv8-open-art,.cv5-stage .cv8-paint-top-back{display:none}
+ .cv6-appearance-pane{
+ position:fixed;top:clamp(155px,23dvh,235px);bottom:70px;left:12px;right:12px;width:auto;height:auto;
+ border:3px solid #f2bd50;border-radius:12px;clip-path:polygon(4% 0,96% 0,100% 4%,100% 96%,96% 100%,4% 100%,0 96%,0 4%);
+ background:linear-gradient(145deg,#113f6b,#041a34 55%,#07294c);
+ box-shadow:inset 0 0 0 2px #2799d5,0 0 30px #032642b3;
+ padding:12px 9px 5px;
+}
+ .cv6-appearance-pane::before{display:block;content:'APARÊNCIA';position:relative;inset:auto;flex:none;
+  background:none;color:#ffda78;font-size:18px;font-weight:1000;letter-spacing:.06em;
+  padding:5px 7px 7px;border:0;text-shadow:0 2px 4px #000;}
+ .cv6-tabs button{min-height:39px;font-size:11px;}
+ .cv6-options-scroll{padding:10px 11px;}
+ .cv6-options-scroll .cv5-choice{font-size:13px;padding:11px 12px;}
+ .cv6-pane-footer button{min-height:43px;font-size:12px;}
+ .cv5.cv6-appearance-open .cv5-mobile-footer{z-index:15;position:relative;}
+}
+@media(prefers-reduced-motion:reduce){
+ .cv8-open-art,.cv8-paint-top-back,.cv6-appearance-pane{transition:none!important;}
+}
