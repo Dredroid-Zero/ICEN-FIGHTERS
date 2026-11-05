@@ -39,7 +39,7 @@ function switchStep(next){
 function validateName(){const name=state.character.name.trim();const valid=name.length>=2&&name.length<=20;$('name-error').hidden=valid;$('player-name').setAttribute('aria-invalid',String(!valid));return valid}
 function next(){if(state.step===1&&!validateName()){toast('Coloque um nome de 2 a 20 caracteres.');$('player-name').focus();return}state.maxStep=Math.max(state.maxStep,state.step+1);switchStep(state.step+1)}
 function create(){if(!validateName()){state.maxStep=3;switchStep(1);$('player-name').focus();return}
- let profile={...state.character,name:state.character.name.trim(),unlockedSkills:[],unlockedCosmetics:[]};
+ let profile={...state.character,name:state.character.name.trim(),course:'matematica',build:window.ICENHexGrid?.blank?.()||null,unlockedSkills:[],unlockedCosmetics:[]};
  let outcome=S.store(profile);
  if(!outcome.ok&&outcome.reason==='full'){
   if(!window.confirm('Você já possui 5 perfis de teste neste navegador. Deseja substituir o mais antigo?'))return;
