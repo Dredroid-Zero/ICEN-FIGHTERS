@@ -14,3 +14,11 @@ A composição aparece como uma única imagem WebP na tela inicial; controles HT
 
 ## Produção seguinte
 Usar esta imagem como referência de composição do menu, sem tratá-la como atlas/sprites de combate. Separar arte em camadas e preparar a tela de criação do Discente, mantendo o projeto literário independente.
+
+## Atualização de interface v1.2 — 05/11/2026
+
+Os quatro botões da imagem oficial têm reação visual ao passar o mouse: ampliação leve (5,8%), brilho contextual dourado em Novo Jogo e azul nos demais, além de um reflexo rápido. Como os botões foram desenhados na própria arte, a implementação recorta a região correspondente **da mesma imagem** como pseudo-elemento do hotspot HTML, evitando aumentar só uma área invisível. O logo recebe um brilho ambiente pulsante, sem alterar o cenário aprovado.
+
+Em telas de celular na orientação vertical, os botões maiores aumentam 3,5% e ganham brilho em hover/pressão; Continuar, Opções e Créditos continuam nativamente `disabled`, portanto não executam ações. A preferência de redução de movimento do sistema é respeitada. Nenhum sprite corporal foi modificado.
+
+Foi validada maquete local em Chromium nas resoluções 1280×720, 1366×768, 1920×1080 e 390×844: zoom de Novo Jogo e Continuar verificado, sem rolagem. Fluxo completo da interface hospedada e testes em dispositivos físicos são conferências complementares. A alteração do jogo está somente em `src/splash.css`, com prévias na [pasta do Drive](https://drive.google.com/drive/folders/19sayb-x7dy2x8HEj7eFx_kjg9vhZ52s4).
