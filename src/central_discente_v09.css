@@ -1,0 +1,115 @@
+/* ICEN Fighters — Central do Discente v0.9 | artes APROVADAS, estados fechada/aberta.
+   Não há um modal, moldura ou botão de Aparência gerado por cima da ilustração.
+   A arte aprovada fornece as molduras; HTML fica responsável pela interação. */
+.cv5-stage .cv5-appearance { left:3.0%;top:66.5%;width:30.2%;height:8.8%;z-index:6; }
+/* Remover a antiga falsa ilustração CSS que cobria o botão original. */
+.cv5-stage .cv5-appearance::before,.cv5-stage .cv5-appearance::after{display:none!important;content:none!important;}
+.cv5-stage .cv5-appearance:hover,.cv5-stage .cv5-appearance:focus-visible{
+  transform:scale(1.025);background:rgba(255,213,91,.11);filter:brightness(1.12);
+  box-shadow:inset 0 0 17px #ffe6a650,0 0 15px #ffc35d6b;
+}
+/* Os campos interativos pertencem aos desenhos de fundo (1672x941). */
+.cv5-name{left:6.8%;top:34.12%;width:21.6%;height:4.55%;background:linear-gradient(105deg,#051d38fa,#072440fa);border:0;border-radius:0;
+  font-size:clamp(12px,1.10vw,19px);font-weight:720;text-shadow:none;padding:0 .35%;}
+.cv5-name::placeholder{color:#abc3d5;font-size:.83em;}
+.cv5-math{left:4.3%;top:48.7%;width:13.6%;height:6.8%}
+.cv5-physics{left:18.6%;top:48.7%;width:13.5%;height:6.8%}
+.cv5-biology{left:4.3%;top:56.3%;width:13.6%;height:6.4%}
+.cv5-chemistry{left:18.6%;top:56.3%;width:13.5%;height:6.4%}
+.cv5-back{left:27.8%;top:87.7%;width:20.2%;height:9.1%}
+.cv5-confirm{left:50.3%;top:87.7%;width:21.4%;height:9.1%}
+/* A build bloqueada já está desenhada na própria imagem aprovada. */
+.cv5-build-mask{display:none!important}
+.cv5.cv9-build-unlocked .cv5-build-mask{display:block!important}
+/* Revela o painel de aparência desenhado, limitando o recorte ao lado ESQUERDO. */
+.cv5-stage .cv8-open-art{
+ position:absolute;inset:0;width:100%;height:100%;z-index:7;object-fit:fill;
+ opacity:0;pointer-events:none;user-select:none;
+ clip-path:inset(87% 65% 10% 0%);
+ transition:clip-path .44s cubic-bezier(.21,.78,.22,1),opacity .18s ease;
+}
+.cv5.cv6-appearance-open .cv8-open-art{opacity:1;clip-path:inset(15.5% 65% 9.2% 0%)}
+/* Apenas os pixels do botão CONFIRMAR=>SALVAR mudam no rodapé; o restante não pula. */
+.cv5-stage .cv9-open-bottom-art{
+ position:absolute;inset:0;width:100%;height:100%;z-index:8;object-fit:fill;
+ clip-path:inset(86.8% 27.0% 0% 49.7%);opacity:0;pointer-events:none;transition:opacity .2s ease;
+}
+.cv5.cv6-appearance-open .cv9-open-bottom-art{opacity:1}
+.cv5-stage .cv8-paint-top-back{display:none!important}
+.cv5.cv6-appearance-open .cv5-appearance{visibility:hidden;pointer-events:none}
+/* Região perfeitamente contida nos ornamentos da moldura ESQUERDA. */
+.cv6-appearance-pane{z-index:12;left:4.80%;top:32.9%;width:27.65%;height:48.4%;border:0;border-radius:0;clip-path:none;background:transparent;box-shadow:none;
+ transform:translate3d(0,48%,0);opacity:0;visibility:hidden;pointer-events:none;isolation:isolate;
+ transition:transform .43s cubic-bezier(.2,.80,.22,1),opacity .18s ease,visibility 0s linear .43s;}
+.cv5.cv6-appearance-open .cv6-appearance-pane{transform:translate3d(0,0,0);opacity:1;visibility:visible;pointer-events:auto;transition-delay:0s}
+.cv6-appearance-pane::before,.cv6-appearance-pane::after{display:none!important}
+.cv6-pane-header{display:none!important}
+.cv6-tabs{display:grid;grid-template-columns:1fr 1fr;gap:7px;flex:none;padding:2px 1px 7px;}
+.cv6-tabs button{min-height:clamp(29px,2.85vw,46px);padding:3px 3px;border-radius:10px;border:2px solid #3fcbff;
+ background:linear-gradient(175deg,#0e5289,#062442 56%,#063354);color:#fff7ed;text-shadow:0 1px 2px #001;
+ font-size:clamp(9px,.96vw,15px);font-weight:1000;font-style:italic;box-shadow:0 0 8px #1ab4ff57,inset 0 1px 0 #8deaff66;}
+.cv6-tabs button[aria-selected=true]{color:#1f1b15;background:linear-gradient(#ffe585,#ffc34c 56%,#cb7e1a);border-color:#ffe8a6;
+ text-shadow:none;box-shadow:0 0 13px #ffc04e9c,inset 0 1px 0 #fffac7}
+.cv6-options-scroll{flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:thin;overscroll-behavior:contain;
+ background:linear-gradient(160deg,#041b34,#04162b 65%,#071b35);border:1px solid #1b73ac;border-top:2px solid #ffbd43;
+ box-shadow:inset 0 0 18px #031326; padding:10px 13px 7px;}
+.cv6-options-scroll h3{color:#f8d17a;font-size:clamp(10px,.93vw,15px);font-style:italic;text-shadow:0 1px 3px #000;
+ margin:6px 0 9px;border-bottom:1px solid #9f842e88;padding-bottom:4px;}
+.cv6-options-scroll .cv5-options{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;}
+.cv6-options-scroll .cv5-choice{padding:7px 11px;min-height:33px;font-size:clamp(10px,.83vw,13px);
+ background:linear-gradient(#11558a,#062b4d);color:#eaf7ff;border:2px solid #3fbbf4;border-radius:9px;
+ box-shadow:inset 0 1px #a0edff55,0 0 5px #197bb544;}
+.cv6-options-scroll .cv5-choice[aria-pressed=true]{background:linear-gradient(#ffe58c,#f5b531);color:#1d1508;border-color:#fff0bc;box-shadow:0 0 10px #f9c66885}
+.cv6-options-scroll .cv5-swatch{width:clamp(24px,2.00vw,36px);height:clamp(24px,2.00vw,36px);}
+.cv6-selection-summary{color:#b2e3fa;font-size:clamp(9px,.73vw,12px)}
+/* CANCELAR e SALVAR: as palavras, a forma e a cor já estão na ARTE; controles são hotspots. */
+.cv6-pane-footer{flex:none;gap:8px;padding:7px 1px 1px;background:transparent;border:0}
+.cv6-pane-footer button,.cv6-pane-footer button:last-child{
+  flex:1;min-height:clamp(34px,3.35vw,53px);border:0;border-radius:10px;
+  background:transparent;color:transparent;font-size:0;box-shadow:none;transition:box-shadow .2s,filter .2s,transform .2s;}
+.cv6-pane-footer button:hover,.cv6-pane-footer button:focus-visible{background:transparent;box-shadow:inset 0 0 12px #7edcff7c,0 0 9px #4dbaff66;transform:scale(1.025)}
+.cv6-pane-footer button:last-child:hover,.cv6-pane-footer button:last-child:focus-visible{box-shadow:inset 0 0 12px #ffdf9c88,0 0 12px #fdbf47a8}
+.cv5.cv6-appearance-open .cv5-back,.cv5.cv6-appearance-open .cv5-confirm{z-index:16;pointer-events:auto;cursor:pointer}
+@media(max-height:750px) and (min-aspect-ratio:4/5){
+  .cv6-tabs{gap:4px;padding:1px 1px 4px}.cv6-tabs button{min-height:27px}
+  .cv6-options-scroll{padding:5px 9px}.cv6-options-scroll h3{margin:2px 0 4px}
+  .cv6-options-scroll .cv5-options{margin-bottom:7px}.cv6-pane-footer{padding-top:3px}
+  .cv6-pane-footer button{min-height:29px}
+}
+@media(max-aspect-ratio:4/5),(max-width:650px){
+  .cv5-stage .cv8-open-art,.cv5-stage .cv9-open-bottom-art{display:none}
+  .cv6-appearance-pane{position:fixed;top:clamp(155px,23dvh,235px);bottom:70px;left:12px;right:12px;width:auto;height:auto;
+   border:3px solid #e9b54b;border-radius:13px;clip-path:polygon(4% 0,96% 0,100% 4%,100% 96%,96% 100%,4% 100%,0 96%,0 4%);
+   background:linear-gradient(145deg,#09375d,#041a32 58%,#062647);box-shadow:inset 0 0 0 2px #34b1dc,0 0 24px #02152b94;padding:11px 10px 7px;}
+  .cv6-appearance-pane::before{display:block!important;position:relative;content:'▲ APARÊNCIA';inset:auto;height:auto;background:none;border:0;
+   padding:5px 10px 10px;color:#ffdc7e;font-size:17px;font-weight:950;font-style:italic;text-shadow:0 2px 2px #011;}
+  .cv6-tabs button{font-size:11px;min-height:39px}
+  .cv6-options-scroll{padding:9px 12px}
+  .cv6-options-scroll .cv5-choice{font-size:13px;min-height:43px}
+  .cv6-pane-footer button,.cv6-pane-footer button:last-child{font-size:12px;color:#fff;background:linear-gradient(#11659b,#043354);border:2px solid #5ed4ff;min-height:44px}
+  .cv6-pane-footer button:last-child{color:#211508;background:linear-gradient(#ffe790,#f1b02e);border-color:#ffe4a4}
+  .cv5-build-mask{display:block!important}
+}
+@media(prefers-reduced-motion:reduce){.cv8-open-art,.cv9-open-bottom-art,.cv6-appearance-pane{transition:none!important}}
+/* Os estilos de #cv5-cancel/#cv5-apply da v05 tinham precedência sobre o botão
+   transparente. Aqui os hotspots deixam aparecer CANCELAR e SALVAR da arte. */
+@media (min-width:651px) and (min-aspect-ratio:4/5){
+ #cv6-appearance-pane #cv5-cancel,#cv6-appearance-pane #cv5-apply{
+   background:transparent!important;border:0!important;box-shadow:none!important;
+   color:transparent!important;font-size:0!important;
+ }
+ #cv6-appearance-pane #cv5-cancel:hover,#cv6-appearance-pane #cv5-apply:hover,
+ #cv6-appearance-pane #cv5-cancel:focus-visible,#cv6-appearance-pane #cv5-apply:focus-visible{
+   box-shadow:inset 0 0 14px #fff6c66e,0 0 12px #ffd2757f!important;
+ }
+}
+@media(max-aspect-ratio:4/5),(max-width:650px){
+ #cv6-appearance-pane #cv5-cancel{
+  background:linear-gradient(#14659b,#043354)!important;color:#f7fbff!important;
+  font-size:12px!important;border:2px solid #59d2ff!important;
+ }
+ #cv6-appearance-pane #cv5-apply{
+  background:linear-gradient(#ffe58b,#f2ae2c)!important;color:#281908!important;
+  font-size:12px!important;border:2px solid #ffeba4!important;
+ }
+}
