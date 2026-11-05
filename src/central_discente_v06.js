@@ -12,7 +12,7 @@ function mount(){
  const accessories=C.accessories.map(x=>`<button type="button" class="cv5-choice" data-choice="accessory" data-value="${x.id}" aria-pressed="false">${x.label}</button>`).join('');
  root.innerHTML=`
  <div class="cv5-stage">
-  <img class="cv5-art" src="assets/creator/central_discente_final_aprovada.webp" width="1672" height="941" alt="" aria-hidden="true" draggable="false">
+  <img class="cv5-art" src="assets/creator/criador_fechado_sem_placa_v07.webp" width="1672" height="941" alt="" aria-hidden="true" draggable="false">
   <label for="cv5-name" class="cv5-sr">Nome ou nickname do Discente</label><input class="cv5-name" id="cv5-name" type="text" maxlength="20" autocomplete="off" spellcheck="false" aria-describedby="cv5-name-error" placeholder="Digite seu nickname...">
   <div class="cv5-name-error" id="cv5-name-error" aria-live="polite"></div>
   <button class="cv5-hit cv5-math" type="button" aria-label="Matemática selecionada" title="Matemática — disponível"></button>

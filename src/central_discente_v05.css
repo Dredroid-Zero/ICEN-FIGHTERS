@@ -78,7 +78,7 @@ body:has(#screen-editor.active) .topbar,body:has(#screen-complete.active) .topba
 #cv5-cancel{background:linear-gradient(#174c77,#0c2b4b);border:2px solid #67c9f5;color:#e7f4ff}
 #cv5-apply{background:linear-gradient(#ffe487,#cd8418);border:2px solid #fff2a9;color:#201604;box-shadow:0 0 17px #ffd35d6b}
 .cv5-modal-open~*{pointer-events:none}
-.cv5-finish{height:100%;display:grid;place-items:center;position:relative;background:linear-gradient(130deg,#07152be8,#071b3ce6),url('../assets/creator/central_discente_final_aprovada.webp') center/cover}
+.cv5-finish{height:100%;display:grid;place-items:center;position:relative;background:linear-gradient(130deg,#07152be8,#071b3ce6),url('../assets/creator/criador_fechado_sem_placa_v07.webp') center/cover}
 .cv5-finish section{width:min(520px,92vw);padding:30px;border:2px solid #f8c766;border-radius:13px;text-align:center;background:#051831ef;box-shadow:0 0 30px #ffc95a5c}
 .cv5-finish span{font-size:11px;font-weight:900;letter-spacing:.14em;color:#f5c66c}
 .cv5-finish h2{font-size:30px;margin:14px 0}

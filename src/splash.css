@@ -69,7 +69,7 @@ body:has(#screen-menu.active) main { min-height:100svh; }
   clip-path:polygon(7% 0,93% 0,100% 49%,93% 100%,7% 100%,0 49%);
 }
 .splash-hotspot::before {
-  background-image:url("../assets/menu/menu_principal_aprovado.webp");
+  background-image:url("../assets/menu/menu_sem_placa_v07.webp");
   background-size:var(--icen-bg-size-x) var(--icen-bg-size-y);
   background-position:var(--icen-bg-pos-x) var(--icen-bg-pos-y);
   background-repeat:no-repeat;
