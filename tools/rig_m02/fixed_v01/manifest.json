@@ -1,0 +1,29 @@
+{
+  "format": "icen.fighters.fullframe.keyposes.v0.1",
+  "character": "discente.masculino.02",
+  "visualMode": "fixed_spritesheet",
+  "status": "KEYPOSES_ONLY_NOT_PRODUCTION_ANIMATION",
+  "frameWidth": 620,
+  "frameHeight": 620,
+  "poses": {
+    "guard": "assets/guard.png",
+    "punch": "assets/punch.png",
+    "kick": "assets/kick.png",
+    "jump": "assets/jump.png"
+  },
+  "atlas": "assets/m02_four_keyposes_atlas.png",
+  "atlasColumns": 4,
+  "atlasRows": 1,
+  "sourceArt": "ficha_de_conceito_lutador_icen_fighters.png",
+  "extraction": "full character mask; no independent limbs, clothing or hair layers",
+  "hasInbetweens": false,
+  "hasLoopingAnimations": false,
+  "powersSeparate": true,
+  "collisionMetadataImplemented": false,
+  "notes": [
+    "Extracted from the ICEN Fighters concept sheet, preserving character appearance, not directly drawn as a spritesheet",
+    "Manual cleanup of extracted matte edges is still required",
+    "Do not use these four poses as replacement for full gameplay animations",
+    "No changes were made to the main game or user save data"
+  ]
+}

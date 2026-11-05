@@ -121,3 +121,9 @@ A tentativa tem uma alternativa explícita: caso o resultado não tenha qualidad
 [Decisão e critérios de aceite](docs/SPRITE_MESTRE_M02_DECISAO_V03.md) · [Contrato e verificador de peças](tools/rig_m02/v03/README.md) · [Arquivos no Drive](https://drive.google.com/drive/folders/1oAVPXHvvwlK5CB9LODGqhJdVydbsiuJD).
 
 **Estado:** especificação e testes de validação (3 casos) implementados; **sprites originais e animações ainda não produzidos**. Nada foi alterado nas telas ou no sistema de combate.
+
+## Plano B — Discente Masculino 2, sprites completos (06/11/2026)
+
+Foi criado um laboratório independente com 4 poses-chave completas, em PNG RGBA (guarda, soco, chute, salto), derivadas da ficha conceitual aprovada. Não há recorte de braços ou roupas em camadas. São **poses estáticas**, ainda não animações quadro a quadro: as transições no laboratório só alternam os desenhos. Os quadros intermediários terão que ser desenhados individualmente. O jogo, a interface de criação e os saves permanecem intactos.
+
+[Laboratório](tools/rig_m02/fixed_v01/lab.html) · [Manifesto](tools/rig_m02/fixed_v01/manifest.json) · [Arquivos no Drive](https://drive.google.com/drive/folders/1jAxX39AE_-H8bGx2xcZUal_NBqsh9P2P)
