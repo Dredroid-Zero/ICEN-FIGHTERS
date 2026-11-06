@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICEN Fighters — M02: Laboratório Idle/Respiração</title>
+<style>
+:root{color-scheme:dark;--bg:#061426;--panel:#102943;--edge:#386a8d;--gold:#f8c86c;--ink:#eef7ff;--sub:#aec9de}*{box-sizing:border-box}
+body{margin:0;font:14px/1.5 system-ui,Segoe UI,sans-serif;background:radial-gradient(circle at 50% 0,#194067,#05101f 75%);color:var(--ink)}
+header{padding:18px max(18px,calc((100vw - 1150px)/2));border-bottom:1px solid #c99c4c;background:#081c32}
+h1{margin:0;font-size:clamp(20px,3vw,30px);color:var(--gold)}header p{margin:4px 0 0;color:var(--sub)}
+main{max-width:1150px;margin:auto;padding:18px;display:grid;grid-template-columns:minmax(320px,1.4fr) minmax(280px,.85fr);gap:16px}
+section{border:1px solid var(--edge);background:linear-gradient(140deg,#12314d,#091b30);border-radius:12px;padding:15px;min-width:0}
+h2{margin:0 0 10px;color:#f9d48c;font-size:17px}
+canvas{display:block;width:100%;height:auto;border:1px solid #3e779f;border-radius:8px;background:#07182b}
+.controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+button{padding:11px;border-radius:8px;border:1px solid #6a9abe;background:#164265;color:white;font-weight:750;cursor:pointer}
+button:hover{filter:brightness(1.2)}button:focus-visible,input:focus-visible{outline:2px solid #ffc65e;outline-offset:2px}
+button.primary{background:#eab85b;color:#162436;border-color:#f7d388}
+label{display:flex;justify-content:space-between;gap:12px;margin:13px 0 4px;font-weight:650}
+input[type=range]{width:100%;accent-color:#e9b453}input[type=checkbox]{accent-color:#e9b453}
+.note{font-size:12px;color:var(--sub);line-height:1.6}.warn{border-left:3px solid #e9b453;background:#1e2d3d;padding:10px;margin-top:12px}
+#status{color:#a9e5d4;min-height:21px}kbd{border:1px solid #577d9f;padding:1px 5px;border-radius:3px}
+.frames{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin:10px 0}
+.frames button{padding:8px 0;font-size:12px}.frames button.selected{background:#ecc066;color:#182638}
+.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0}small{color:var(--sub)}
+@media(max-width:800px){main{grid-template-columns:1fr}header{padding:14px}main{padding:10px}section{padding:10px}}
+</style></head><body>
+<header><h1>ICEN FIGHTERS / ANIMAÇÃO M02</h1><p>Laboratório isolado • Guarda e respiração • Protótipo técnico v0.1</p></header>
+<main>
+<section><h2>01 — Prévia com personagem original</h2>
+<canvas id="stage" width="780" height="620" aria-label="Prévia animada do personagem M02"></canvas>
+<div class="bar"><strong id="frameLabel">Quadro 01 / 08</strong><small id="status" role="status">Carregando sprite original...</small></div>
+<div class="frames" id="frameButtons"></div>
+<div class="controls"><button id="play" class="primary">❚❚ Pausar</button><button id="prev">← Quadro anterior</button><button id="next">Próximo quadro →</button><button id="save">↓ Exportar quadro PNG</button></div>
+<p class="note">Atalhos: <kbd>Espaço</kbd> pausa/reproduz • <kbd>←</kbd> / <kbd>→</kbd> percorrem os quadros. A exportação mantém 620 × 620 e transparência.</p>
+</section>
+<section><h2>02 — Ajustes e inspeção</h2>
+<label for="fps">Velocidade <output id="fpsVal">8 FPS</output></label><input id="fps" type="range" min="1" max="16" value="8" step="1">
+<label for="amp">Intensidade da respiração <output id="ampVal">35%</output></label><input id="amp" type="range" min="0" max="100" value="35" step="1">
+<label for="pivot">Altura de ancoragem (px) <output id="pivotVal">530</output></label><input id="pivot" type="range" min="430" max="610" value="530" step="1">
+<label><span>Mostrar grade e linha do chão</span><input id="grid" type="checkbox" checked></label>
+<label><span>Exibir imagem original em transparência</span><input id="ghost" type="checkbox"></label>
+<label><span>Espelhar para esquerda</span><input id="flip" type="checkbox"></label>
+<div class="warn"><b>Atenção — protótipo, não arte final.</b><p class="note">Oito estados de respiração são obtidos por deformação suave da <b>imagem completa original de guarda</b>, sem separar membros. Isso permite testar loop, ancoragem e tremulações, mas <b>não equivale a oito quadros desenhados manualmente</b>. É preciso aprovar ou redesenhar os quadros antes de marcar a animação como concluída.</p></div>
+<p class="note">A região inferior é mantida imóvel para não deslocar os pés. O ajuste da ancoragem permite diagnosticar onde a deformação deve terminar. Nenhum dano, poder, hitbox ou salvamento do jogo é alterado.</p>
+<p class="note"><a style="color:#a8dfff" href="../fixed_v01/lab.html">↩ Voltar ao laboratório de poses originais</a></p>
+</section>
+</main>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),canvas=$('stage'),ctx=canvas.getContext('2d');
+const src=new Image(); src.src='../fixed_v01/assets/guard.png'; const sprite=document.createElement('canvas');
+sprite.width=620;sprite.height=620;const sc=sprite.getContext('2d');
+const W=620,H=620,N=8;
+let current=0,playing=true,last=0,carry=0,ready=false;
+const btns=[];
+function cfg(){return {fps:+$('fps').value,amp:+$('amp').value/100,pivot:+$('pivot').value,flip:$('flip').checked,grid:$('grid').checked,ghost:$('ghost').checked}}
+function phase(i){return (1-Math.cos(2*Math.PI*i/N))/2}
+function renderSprite(i,out,options){
+ const c=out.getContext('2d');c.clearRect(0,0,W,H);
+ if(!ready)return;
+ const breathe=phase(i)*options.amp;
+ // Transformações de faixas aplicadas ao personagem completo, jamais a partes recortadas.
+ // O movimento tende a zero junto à linha de ancoragem dos pés.
+ const strip=2;
+ for(let y=0;y<H;y+=strip){
+   const h=Math.min(strip,H-y);
+   const t=Math.max(0,Math.min(1,(options.pivot-y)/Math.max(1,options.pivot)));
+   const influence=t*t*(3-2*t);
+   const dx=1.15*breathe*influence;
+   const expand=1+0.008*breathe*influence;
+   const center=W*.50;
+   c.drawImage(sprite,0,y,W,h,center+(0-center)*expand+dx,y,W*expand,h+.12);
+ }
+}
+const working=document.createElement('canvas');working.width=W;working.height=H;
+function draw(){
+ const conf=cfg();$('fpsVal').textContent=conf.fps+' FPS';$('ampVal').textContent=Math.round(conf.amp*100)+'%';$('pivotVal').textContent=conf.pivot;
+ $('frameLabel').textContent='Quadro '+String(current+1).padStart(2,'0')+' / 08';
+ btns.forEach((b,i)=>{b.classList.toggle('selected',i===current);b.setAttribute('aria-pressed',String(i===current))});
+ ctx.clearRect(0,0,780,620);const bg=ctx.createLinearGradient(0,0,0,620);bg.addColorStop(0,'#153955');bg.addColorStop(1,'#061426');ctx.fillStyle=bg;ctx.fillRect(0,0,780,620);
+ if(conf.grid){ctx.strokeStyle='#90b7d026';ctx.lineWidth=1;for(let x=0;x<780;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,620);ctx.stroke()}for(let y=0;y<620;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(780,y);ctx.stroke()}ctx.strokeStyle='#7adbd4a0';ctx.beginPath();ctx.moveTo(0,conf.pivot);ctx.lineTo(780,conf.pivot);ctx.stroke()}
+ renderSprite(current,working,conf);ctx.save();if(conf.flip){ctx.translate(780,0);ctx.scale(-1,1)}
+ const x=80;if(conf.ghost&&ready){ctx.globalAlpha=.23;ctx.drawImage(sprite,x,0);ctx.globalAlpha=1}ctx.drawImage(working,x,0);ctx.restore();
+}
+function tick(now){if(!last)last=now;const delta=Math.min(100,now-last);last=now;if(ready&&playing){carry+=delta;const step=1000/cfg().fps;while(carry>=step){carry-=step;current=(current+1)%N}}draw();requestAnimationFrame(tick)}
+for(let i=0;i<N;i++){const b=document.createElement('button');b.textContent=String(i+1).padStart(2,'0');b.onclick=()=>{playing=false;sync();current=i;draw()};$('frameButtons').appendChild(b);btns.push(b)}
+function sync(){$('play').textContent=playing?'❚❚ Pausar':'▶ Reproduzir'}
+$('play').onclick=()=>{playing=!playing;carry=0;sync()};
+$('prev').onclick=()=>{playing=false;sync();current=(current+N-1)%N;draw()};
+$('next').onclick=()=>{playing=false;sync();current=(current+1)%N;draw()};
+$('save').onclick=()=>{if(!ready)return;renderSprite(current,working,cfg());let a=document.createElement('a');a.download='M02_idle_guard_'+String(current).padStart(3,'0')+'_PROTOTIPO.png';a.href=working.toDataURL('image/png');a.click()};
+document.addEventListener('keydown',e=>{if(e.target.matches('input,button'))return;if(e.code==='Space'){e.preventDefault();$('play').click()}if(e.code==='ArrowLeft'){$('prev').click()}if(e.code==='ArrowRight'){$('next').click()}});
+src.onload=()=>{sc.clearRect(0,0,W,H);sc.drawImage(src,0,0,W,H);ready=true;$('status').textContent='Imagem original carregada • 8 estados de protótipo';draw()};
+src.onerror=()=>{$('status').textContent='Erro: não foi possível carregar ../fixed_v01/assets/guard.png';playing=false;sync()};
+requestAnimationFrame(tick);
+})();
+</script></body></html>
